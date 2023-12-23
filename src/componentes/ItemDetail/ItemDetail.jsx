@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 
 const ItemDetail = ({id, nombre, stock, precio, img, idcat}) => {
+  
   //Creamos un estado local con la cantidad de productos agregados. 
   const [agregarCantidad, setAgregarCantidad]  = useState(0);
 

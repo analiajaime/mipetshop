@@ -1,15 +1,23 @@
-import NavBar from "./components/NavBar/NavBar"
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
-import ItemList from "./components/ItemList/ItemList"
-import Item from "./components/Item/Item"
-import CartWidget from "./components/CartWidget/CartWidget"
-import Contador from "./components/Contador/Contador"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
+import NavBar from "./componentes/NavBar/NavBar";
 
 const App = () => {
   return (
     <div>
-      <NavBar />
-      <ItemListContainer greeting="Bienvenidos a mi PetShop Online" />
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>} />
+          <Route path="/categoria/:idCategoria" element={<ItemListContainer/>}  />
+          <Route path="/item/:idItem" element={<ItemDetailContainer/>}  />
+          <Route path="/cart" element={<h2>Coming soon...</h2>} />
+        </Routes>
+      </BrowserRouter>
+      
+
+      
     </div>
   )
 }

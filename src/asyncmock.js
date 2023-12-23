@@ -1,5 +1,5 @@
 const productos = [
-    { id: 1, nombre: "Veterinario 1", precio: 100, img: "public\img\card1.jpeg", idcat: "veterinarios" },
+    { id: 1, nombre: "Veterinario 1", precio: 100, img: "img/card1.jpeg", idcat: "veterinarios" },
     { id: 2, nombre: "Perro 1", precio: 150, img: "public\img\card2.jpeg", idcat: "perros" },
     { id: 3, nombre: "Comida 1", precio: 200, img: "public\img\card3.jpeg", idcat: "comidas" },
     { id: 4, nombre: "Perro 2", precio: 250, img: "public\img\card4.jpeg", idcat: "perros" },
@@ -22,7 +22,7 @@ export const getProductos = () => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(productos);
-        }, 2000)
+        }, 100)
     })
 }
 
@@ -33,20 +33,20 @@ export const getUnProducto = (id) => {
         setTimeout( () => {
             const producto = productos.find(item => item.id === id);
             resolve(producto);
-        }, 2000)
+        }, 100)
     })
 }
 
 
 //Nueva función que retorne toda una categoria: 
-
 export const getProductosPorCategoria = (idCategoria) => {
     return new Promise(resolve => {
         setTimeout(()=> {
-            const productosCategoria = productos.filter(item => item.idCat === idCategoria );
+            const productosCategoria = productos.filter(item => item.idcat === idCategoria );
             resolve(productosCategoria);
-        }, 2000)
+        }, 100)
     })
 }
+
 
 
