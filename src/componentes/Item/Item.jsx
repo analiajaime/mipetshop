@@ -1,4 +1,6 @@
+import './Item.css'
 import React from 'react'
+
 
 
 const Item = ({id, nombre, precio, img, idCat}) => {
